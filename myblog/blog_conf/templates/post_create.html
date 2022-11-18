@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load widget_tweaks %}
+
+<h2 class="title">ブログ作成画面</h2>
+
+<div class="has-text-centered">
+    <form action="." method="post">
+        {% csrf_token %}
+        <div class="title">
+            {{ form.title | add_class:"input is-primary"}}
+        </div>
+        <div hidden>
+            <input type="text" name="slug" maxlength="50" class="input is-primary" required="" id="id_slug" value={{next_cnt}}>
+        </div>
+        <div class="title">
+            {{ form.intro | add_class:"input is-primary"}}
+        </div>
+        <div class="title">
+            {{ form.body | add_class:"textarea is-primary"}}
+        </div>
+        <div class="title">
+            {{ form.img | add_class:"input is-primary"}}
+        </div>
+            <button class="button is-danger is-rounded is-large is-hovered" style="margin: 50px;">保存</button>
+    </form>
+</div>
+
+<!-- <script src="{% static 'js/post_create.js' %}"></script> -->
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="title">{{post.title}}</h2>
+<p>{{post.intro}}</p>
+<hr />
+<p>{{post.body}}</p>
+<small>Posted at {{post.data_added}}</small>
+
+{% endblock %}
